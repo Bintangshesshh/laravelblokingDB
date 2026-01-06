@@ -16,6 +16,9 @@ class SklhController extends Controller
     public function guruMataPelajaran()
     {
         $guru = Guru::with('mataPelajaran')->get();
-        return $guru;
+
+        return view('guru-mata-pelajaran', [
+            'guruList' => $guru,
+        ]);
     }
 }
